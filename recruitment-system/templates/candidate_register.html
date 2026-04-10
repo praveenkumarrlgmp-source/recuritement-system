@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Candidate Registration</title>
+  <link rel="stylesheet" href="/static/candidate-reg.css">
+</head>
+
+<body>
+
+<div class="register-box">
+
+  <h2>Candidate Registration</h2>
+
+  <form method="POST" action="/register" enctype="multipart/form-data">
+    
+    <label>Name</label>
+    <br>
+    <input type="text" name="name" placeholder="Enter your name" required maxlength="100">
+    <br><br>
+
+    <label>Email</label>
+    <br>
+    <input type="email" name="email" placeholder="Enter your email" required maxlength="150">
+    <br><br>
+
+    <label>Password</label>
+    <br>
+    <input type="password" name="password" placeholder="Create password" required minlength="8">
+    <br><br>
+
+    <label>Upload Resume (PDF or DOCX only)</label>
+    <br>
+    <input type="file" name="resume" accept=".pdf,.docx" required>
+    <br><br>
+
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <button type="submit">Register</button>
+  </form>
+
+  <br>
+  <p>Already have an account? <a href="/login">Login Here</a></p>
+  <a href="/">Back to Home</a>
+
+</div>
+
+</body>
+</html>

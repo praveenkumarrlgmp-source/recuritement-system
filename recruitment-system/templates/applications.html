@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h2>Applications</h2>
+
+<table border="1">
+
+<tr>
+<th>Candidate</th>
+<th>Job</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for a in apps %}
+<tr>
+<td>{{ a[1] }}</td>
+<td>{{ a[2] }}</td>
+<td>{{ a[3] }}</td>
+<td>
+<a href="/shortlist/{{ a[0] }}">Shortlist</a> 
+<a href="/schedule/{{ a[0] }}" class="schedule-btn">Schedule Interview</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>

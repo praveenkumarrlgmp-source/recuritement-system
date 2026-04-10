@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recruiter Login</title>
+  <link rel="stylesheet" href="/static/recurite_login.css">
+</head>
+
+<body>
+
+<div class="login-container">
+
+  <h2>Recruiter Login</h2>
+
+  <form method="POST" action="/recruiter">
+    
+
+    <label>Username</label>
+    <br>
+    <input type="text" name="username" placeholder="Enter Username" required>
+    <br><br>
+
+    <label>Password</label>
+    <br>
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <br><br>
+
+
+      <p style="color:red;">{{ error }}</p>
+
+
+    <button type="submit">Login</button>
+  </form>
+
+  <br>
+  <a href="/">Back to Home</a>
+
+</div>
+
+</body>
+</html> 

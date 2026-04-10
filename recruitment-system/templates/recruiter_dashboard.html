@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Recruiter Dashboard</title>
+<link rel="stylesheet" href="/static/recruiter_dashboard.css">
+</head>
+<body>
+<h1>Recruiter Dashboard</h1>
+<table>
+<tr>
+<th>S.no</th>
+<th>Candidate</th>
+<th>Job</th>
+<th>Status</th>
+<th>Interview Date</th>
+<th>Actions</th>
+</tr>
+
+{% for app in apps %}
+<tr>
+    <td>{{ loop.index }}</td>
+
+<td>{{app[1]}}</td>
+<td>{{app[2]}}</td>
+<td>{{app[3]}}</td>
+<td>{{app[4] or 'Not Scheduled'}}</td>
+<td>
+<a href="/shortlist/{{app[0]}}" class="btn">Shortlist</a>
+<a href="/schedule_interview/{{app[0]}}" class="btn">Schedule Interview</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/">Back to Home</a>
+</body>
+</html>
+
+

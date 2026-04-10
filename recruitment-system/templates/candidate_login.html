@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Candidate Login</title>
+  <link rel="stylesheet" href="/static/candidate-login.css">
+</head>
+
+<body>
+
+<div class="login-box">
+
+  <h2>Candidate Login</h2>
+
+  <form method="POST" action="/login">
+    
+    <label>Email</label>
+    <br>
+    <input type="email" name="email" placeholder="Enter Email" required>
+    <br><br>
+
+    <label>Password</label>
+    <br>
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <br><br>
+
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <button type="submit">Login</button>
+  </form>
+
+  <br>
+  <p>New User? <a href="/register">Register Here</a></p>
+  <a href="/">Back to Home</a>
+
+</div>
+
+</body>
+</html>
